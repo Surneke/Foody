@@ -14,7 +14,7 @@ function App() {
   
         <PersistentDrawerLeft />
         <Routes>
-          <Route path={"/:id"} element={<Home />} />
+          <Route path={"/"} element={<Home />} />
           <Route path={"/graphic"} element={<Graphic />} />
           <Route path={"/order"} element={<Order />} />
           <Route path={"/login"} element={<Login />} />

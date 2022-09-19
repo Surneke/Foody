@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
     shape: {
-        borderRadius: 20
+        borderRadius: 20,
     },
     shadows: {
         borderShadow: "none"
@@ -20,6 +20,9 @@ export const theme = createTheme({
         success:{
             main: '#000723'
         },
+        error:{
+            main: '#FF0000'
+        },
         background: {
             default: ' #f5f5f7',
 
@@ -27,8 +30,5 @@ export const theme = createTheme({
         text: {
             primary: '#383838',
         },
-        red: {
-            main: "#ff0000",
-        }
     },
 });

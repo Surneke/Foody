@@ -25,7 +25,7 @@ import BorderColorIcon from "@mui/icons-material/BorderColor";
 import { Button } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
 import {ChildModal} from './AlertModal'
-
+import { useLocation } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -81,6 +81,7 @@ const menuItem = [
   { name: "Меню", icon: <RestaurantMenuIcon /> ,path: "/menu"},
   { name: "Гарах", icon: <LoginIcon /> ,path: "/login", style:{marginTop:"250px", modal:<ChildModal/>}},
 ];
+const arr=  ["order","graphic","graphic","menu","login"]
 
 export const PersistentDrawerLeft = () => {
   const theme = useTheme();
@@ -94,6 +95,9 @@ export const PersistentDrawerLeft = () => {
     setOpen(false);
   };
 
+  const location = useLocation();
+  const index = arr.indexOf(location.pathname.slice(1))
+  console.log(menuItem[index].name)
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -109,7 +113,7 @@ export const PersistentDrawerLeft = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            {menuItem.name}
+    {menuItem[index].name}
           </Typography>
         </Toolbar>
       </AppBar>
