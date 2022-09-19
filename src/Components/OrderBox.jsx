@@ -2,7 +2,7 @@ import {Box, Typography, Grid} from '@mui/material'
 import WidgetsIcon from '@mui/icons-material/Widgets';
 // import { Accordion } from './Accordion';
 
-export const OrderBox = ({name,count,color}) => {
+export const OrderBox = ({name,count,color,acc}) => {
     return (
         <Grid item width="300px">
             <Box 
@@ -10,6 +10,7 @@ export const OrderBox = ({name,count,color}) => {
                 alignItems="center" 
                 justifyContent="space-between"
                 border="1px solid #DFE0EB"
+                backgroundColor="#fff"
             >
                 <Typography>{name}</Typography>
                 <Box>
@@ -20,9 +21,9 @@ export const OrderBox = ({name,count,color}) => {
             <Box 
                 sx={{background:{color}}}
                 border="1px solid #DFE0EB"
-                height="740px"
+                height="540px"
             >
-                {/* <Accordion/> */}
+                 hhh
             </Box>
         </Grid>
     )

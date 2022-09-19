@@ -1,11 +1,26 @@
 import * as React from "react";
-import { Stack,Grid, TextField,Divider, MenuItem, InputLabel, FormControl,Select, Box,Button,Typography,Modal,IconButton} from "@mui/material";
+import {
+  Stack,
+  Grid,
+  TextField,
+  Divider,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  Select,
+  Box,
+  Button,
+  Typography,
+  Modal,
+  IconButton,
+} from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import ClearIcon from "@mui/icons-material/Clear";
-import AddIcon from '@mui/icons-material/Add';
+import AddIcon from "@mui/icons-material/Add";
 import { FoodAddImg } from "../images/FoodAddImg";
 import { useState } from "react";
-import {Ingredients} from "./Ingredients"
+import { Ingredients } from "./Ingredients";
+
 export const BasicModal = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -15,23 +30,25 @@ export const BasicModal = () => {
     setAge(event.target.value);
   };
   const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     width: 800,
-    bgcolor: 'background.paper',
+    height: "100vh",
+    overflow: "scroll",
+    bgcolor: "background.paper",
     boxShadow: 24,
     p: 4,
   };
   const ingredients = [
-    {name:'Сармис', img: ""},
-    {name:'Дофү', img: ""},
-    {name:'Гахайн мах', img: ""},
-    {name:'Гочугару', img: ""},
-    {name:'Хар перц', img: ""},
-    {name:'Давс', img: ""},
-  ]
+    { name: "Сармис" },
+    { name: "Дофү" },
+    { name: "Гахайн мах" },
+    { name: "Гочугару" },
+    { name: "Хар перц" },
+    { name: "Давс" },
+  ];
   return (
     <div>
       <Button sx={{ marginTop: "20px" }} onClick={handleOpen}>
@@ -45,9 +62,7 @@ export const BasicModal = () => {
         aria-describedby="modal-modal-description"
       >
         <Box>
-          <Box
-            sx={style}
-          >
+          <Box sx={style}>
             <Box
               display="flex"
               justifyContent="space-between"
@@ -76,12 +91,12 @@ export const BasicModal = () => {
                   backgroundColor="#fff"
                 />
               </Box>
-              <Stack width="480px" mb={'48px'} gap="15px">
+              <Stack width="480px" mb={"48px"} gap="15px">
                 <Typography>Хоолны нэр</Typography>
                 <TextField fullWidth label="Энд бичнэ үү" />
                 <Typography>Дэлгэрэнгүй</Typography>
                 <TextField fullWidth label="Энд бичнэ үү" />
-                <Box display="flex" gap={'10px'}>
+                <Box display="flex" gap={"10px"}>
                   <Stack>
                     <Typography>Хоолны үнэ</Typography>
                     <TextField label="₮ Энд бичнэ үү" />
@@ -89,7 +104,7 @@ export const BasicModal = () => {
                   <Stack>
                     <Typography>Төрөл</Typography>
                     <FormControl width="80px">
-                      <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                      <InputLabel id="demo-simple-select-label"></InputLabel>
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
@@ -97,23 +112,57 @@ export const BasicModal = () => {
                         label="Age"
                         onChange={handleChange}
                       >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value={10}>Халуун ногоотой</MenuItem>
+                        <MenuItem value={20}>Цагаан хоол</MenuItem>
+                        <MenuItem value={30}>Дессерт</MenuItem>
                       </Select>
                     </FormControl>
                   </Stack>
                 </Box>
               </Stack>
             </Box>
-            <Divider/>
-            <Box mt="42px" display='flex' justifyContent={'space-between'}>
-                <Typography>Орц, найрлага</Typography>
-                <Button><AddIcon/>Орц нэмэх</Button>
+            <Divider />
+            <Box mt="42px" display="flex" justifyContent={"space-between"}>
+              <Typography>Орц, найрлага</Typography>
+              <Button>
+                <AddIcon />
+                Орц нэмэх
+              </Button>
             </Box>
-            <Grid>
-              {ingredients.map((el) => <Ingredients/> )}
+            <Grid
+              display="flex"
+              flexWrap="wrap"
+              justifyContent="space-between"
+              marginBottom="48px"
+            >
+              {ingredients.map((el) => (
+                <Ingredients name={el.name} />
+              ))}
             </Grid>
+            <Divider />
+            <Box mt="15px">
+              <Typography variant="h6">Тэжээллэг чанар</Typography>
+              <Box 
+			   height="200px" 
+			   width="730px" 
+			   border="1px dashed #DFE0EB"
+			   mt="15px"
+			  >
+                <input type="file" />
+            </Box>
+			<Divider />
+            <Box mt="15px">
+              <Typography variant="h6">Хийх заавар</Typography>
+              <Box 
+			   height="200px" 
+			   width="730px" 
+			   border="1px dashed #DFE0EB"
+			   mt="15px"
+			  >
+                <input type="file" label="бичлэг оруулах" />
+              </Box>
+			</Box>
+            </Box>
           </Box>
         </Box>
       </Modal>
