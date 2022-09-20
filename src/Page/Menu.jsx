@@ -16,6 +16,7 @@ export const Menu = () => {
                 justifyContent="center"
                 flexDirection="column"
                 position="relative"
+                marginLeft="50px"
                 sx={{
                     border:"0.5px solid #ddd", 
                     background:"#fff",

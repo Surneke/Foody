@@ -11,7 +11,6 @@ import { AuthProvider } from "./Context/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
         <ThemeProvider theme={theme}>
@@ -21,7 +20,6 @@ root.render(
         </ThemeProvider>
       </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
