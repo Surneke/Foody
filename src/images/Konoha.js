@@ -15,8 +15,8 @@ export const Konoha = () => {
         <path
           d="M78.8515 61.6246C46.2077 72.783 29.3526 95.4818 21.7425 110.487"
           stroke="#75AA34"
-          stroke-width="3"
-          stroke-linecap="round"
+          strokeWidth="3"
+          strokeLinecap="round"
         />
       </g>
       <defs>
@@ -63,8 +63,8 @@ export const Konoha = () => {
           y2="90.7733"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#93C852" />
-          <stop offset="1" stop-color="#7FB73A" />
+          <stop stopColor="#93C852" />
+          <stop offset="1" stopColor="#7FB73A" />
         </linearGradient>
       </defs>
     </svg>

@@ -15,8 +15,8 @@ export const KonohaUp = () => {
         <path
           d="M54.1828 45.6633C67.5859 71.6888 67.9615 98.5591 63.7903 112.213"
           stroke="#75AA34"
-          stroke-width="3"
-          stroke-linecap="round"
+          strokeWidth="3"
+          strokeLinecap="round"
         />
       </g>
       <defs>
@@ -29,7 +29,7 @@ export const KonohaUp = () => {
           filterUnits="userSpaceOnUse"
           color-interpolation-filters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -63,8 +63,8 @@ export const KonohaUp = () => {
           y2="91.8298"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#93C852" />
-          <stop offset="1" stop-color="#7FB73A" />
+          <stop stopColor="#93C852" />
+          <stop offset="1" stopColor="#7FB73A" />
         </linearGradient>
       </defs>
     </svg>

@@ -26,6 +26,7 @@ export const BasicModal = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [age, setAge] = useState("");
+  
   const handleChange = (event) => {
     setAge(event.target.value);
   };
@@ -135,33 +136,33 @@ export const BasicModal = () => {
               justifyContent="space-between"
               marginBottom="48px"
             >
-              {ingredients.map((el) => (
-                <Ingredients name={el.name} />
+              {ingredients.map((el, idx) => (
+                <Ingredients key={idx} name={el.name} />
               ))}
             </Grid>
             <Divider />
             <Box mt="15px">
               <Typography variant="h6">Тэжээллэг чанар</Typography>
-              <Box 
-			   height="200px" 
-			   width="730px" 
-			   border="1px dashed #DFE0EB"
-			   mt="15px"
-			  >
+              <Box
+                height="200px"
+                width="730px"
+                border="1px dashed #DFE0EB"
+                mt="15px"
+              >
                 <input type="file" />
-            </Box>
-			<Divider />
-            <Box mt="15px">
-              <Typography variant="h6">Хийх заавар</Typography>
-              <Box 
-			   height="200px" 
-			   width="730px" 
-			   border="1px dashed #DFE0EB"
-			   mt="15px"
-			  >
-                <input type="file" label="бичлэг оруулах" />
               </Box>
-			</Box>
+              <Divider />
+              <Box mt="15px">
+                <Typography variant="h6">Хийх заавар</Typography>
+                <Box
+                  height="200px"
+                  width="730px"
+                  border="1px dashed #DFE0EB"
+                  mt="15px"
+                >
+                  <input type="file" label="бичлэг оруулах" />
+                </Box>
+              </Box>
             </Box>
           </Box>
         </Box>
