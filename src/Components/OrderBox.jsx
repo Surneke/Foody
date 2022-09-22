@@ -5,22 +5,25 @@ import { useContext, useEffect } from "react";
 import { Accord } from "./Accordion";
 import { useState } from "react";
 
-export const OrderBox = ({ background, name, index, status }) => {
-  const { data, order, packing, delivery, mistaken } = useContext(OrderContext);
+export const OrderBox = ({ background, name, index, status, orders }) => {
   const [expanded, setExpanded] = useState(false);
   const [goyArray, setGoyArray] = useState([]);
+
   const handleExpand = (foodID) => (e, isExpanded) => {
     setExpanded(isExpanded ? foodID : false);
   };
+
   const filterData = (status, weekday) => {
-    const fData = data.filter((el) => {
+    const fData = orders.filter((el) => {
       return el.status === status && el.date === weekday;
     });
     setGoyArray(fData);
   };
+  // console.log(goyArray);
   useEffect(() => {
     filterData(status, name);
-  }, []);
+    return;
+  });
   return (
     <Grid item width="300px">
       <Box
@@ -46,7 +49,6 @@ export const OrderBox = ({ background, name, index, status }) => {
         bgcolor={background}
       >
         {goyArray.map((el, id) => {
-          
           return (
             <Accord
               key={id}

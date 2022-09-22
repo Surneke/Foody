@@ -45,7 +45,7 @@ export const data= [
       },
       {
         orderID: "OODCF5",
-        date: "Мягмар",
+        date: "Даваа",
         status: "Захиалсан",
         food: [
           { productID: 56, productName: "К", amount: 2, price: 33400 },

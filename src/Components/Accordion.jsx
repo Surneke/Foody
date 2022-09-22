@@ -33,44 +33,56 @@ export const Accord = ({ dataa, expanded, handleExpand }) => {
   } = useContext(OrderContext);
   const [status, setStatus] = useState("");
   const [accordionID, setAccordionID] = useState("");
+
   const statusOptions = [
-    { status: "Савалсан" },
-    { status: "Хүргэсэн" },
+    { status: "Савлагдсан" },
+    { status: "Хүргэгдсэн" },
     { status: "Алдаатай" },
   ];
   const handleChange = (event) => {
     setStatus(event.target.value);
   };
-  const defaultAll = () => data;
+  const defaultAll = () => data.find((el) => el.status === dataa.status);
+
   const packaged = () => {
-    const packagedArr = data.filter((el) => {
-      return el.orderID === accordionID;
-    });
-    setPacking(packagedArr);
-  };
-  const delivered = () => {
-    const deliveredArr = data.filter((el) => {
-      return el.orderID === accordionID;
-    });
-    setDelivery(deliveredArr);
-  };
-  const misTaken = () => {
-    const mistakenArr = data.filter((el) => {
-      return el.orderID === accordionID;
-    });
-    setMistaken(mistakenArr);
+    const packagedArr = data
+      .filter((el) => {
+        return el.orderID === accordionID;
+      })
+      .map((el) => {
+        return { ...el, status: status };
+      });
+    setPacking((pre) => [...pre, packagedArr].flat());
   };
 
-  //  console.log(orID);
-  // console.log("pa",packing);
-  // console.log("de",delivery);
-  // console.log("mi",mistaken);
+  const delivered = () => {
+    const deliveredArr = data
+      .filter((el) => {
+        return el.orderID === accordionID;
+      })
+      .map((el) => {
+        return { ...el, status: status };
+      });
+    setDelivery((pre) => [...pre, deliveredArr].flat());
+  };
+
+  const misTaken = () => {
+    const mistakenArr = data
+      .filter((el) => {
+        return el.orderID === accordionID;
+      })
+      .map((el) => {
+        return { ...el, status: status };
+      });
+    setMistaken((pre) => [...pre, mistakenArr].flat());
+  };
+
   useEffect(() => {
     const statusFunction = () => {
       switch (status) {
-        case "Савалсан":
+        case "Савлагдсан":
           return packaged();
-        case "Хүргэсэн":
+        case "Хүргэгдсэн":
           return delivered();
         case "Алдаатай":
           return misTaken();
