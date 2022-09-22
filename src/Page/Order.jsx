@@ -1,13 +1,13 @@
-import { Box, Container, Grid,Typography } from "@mui/material";
-import { Accordion } from "../Components/Accordion";
+import { Box, Grid, Typography } from "@mui/material";
 import { OrderBox } from "../Components/OrderBox";
-import { Accord } from "../Components/Accordion";
-import { OrderContext } from "../Context/OrderContext";
-import { useContext } from "react";
 
 export const Order = () => {
-  const data = useContext(OrderContext)
-  console.log(data);
+  const statusArray = [
+    { status: "Захиалсан", bgColor: "#F5F5F7" },
+    { status: "Хүргэгдсэн", bgColor: "#FAFFF5" },
+    { status: "Савлагдсан", bgColor: "#FFF9F1" },
+    { status: "Алдаатай", bgColor: "#FAFFF5" },
+  ];
   const orderContainer = [
     { name: "Даваа" },
     { name: "Мягмар" },
@@ -17,6 +17,7 @@ export const Order = () => {
     { name: "Бямба" },
     { name: "Ням" },
   ];
+
   return (
     <Grid
       width="fitcontent"
@@ -24,16 +25,23 @@ export const Order = () => {
       marginLeft="300px"
       container
     >
-      <Grid item display="flex">
-        {orderContainer.map((el, idx) => (
-          <Grid key={idx}>
-            <OrderBox name={el.name} background={"#f5f5f7"}/>
-            <OrderBox background={"#FFF9F1"}/>
-            <OrderBox background={"#FAFFF5;"}/> 
-            <OrderBox background={"#FAFFF5"}/> 
+      {statusArray.map((status, index) => (
+        <Box key={index}>
+          <Typography>{status.status}</Typography>
+          <Grid item display="flex" >
+            {orderContainer.map((el, idx) => (
+              <Grid key={idx}>
+                <OrderBox
+                  name={el.name}
+                  status={status.status}
+                  index={index}
+                  background={status.bgColor}
+                />
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+        </Box>
+      ))}
     </Grid>
   );
 };

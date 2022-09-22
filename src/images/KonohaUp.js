@@ -27,7 +27,7 @@ export const KonohaUp = () => {
           width="85.3428"
           height="133.708"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix

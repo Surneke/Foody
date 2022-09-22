@@ -14,9 +14,9 @@ import {
   Modal,
   IconButton,
 } from "@mui/material";
+import {ChildModal } from "./AlertModal"
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import ClearIcon from "@mui/icons-material/Clear";
-import AddIcon from "@mui/icons-material/Add";
 import { FoodAddImg } from "../images/FoodAddImg";
 import { useState } from "react";
 import { Ingredients } from "./Ingredients";
@@ -105,10 +105,8 @@ export const BasicModal = () => {
                   <Stack>
                     <Typography>Төрөл</Typography>
                     <FormControl width="80px">
-                      <InputLabel id="demo-simple-select-label"></InputLabel>
+                      <InputLabel></InputLabel>
                       <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
                         value={age}
                         label="Age"
                         onChange={handleChange}
@@ -125,10 +123,7 @@ export const BasicModal = () => {
             <Divider />
             <Box mt="42px" display="flex" justifyContent={"space-between"}>
               <Typography>Орц, найрлага</Typography>
-              <Button>
-                <AddIcon />
-                Орц нэмэх
-              </Button>
+              <ChildModal/>
             </Box>
             <Grid
               display="flex"

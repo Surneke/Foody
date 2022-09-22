@@ -8,18 +8,21 @@ import { theme } from "./Theme/Theme";
 import { MenuProvider } from "./Context/MenuContext";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./Context/AuthContext";
+import { OrderProvider } from "./Context/OrderContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <BrowserRouter>
-      <AuthProvider>
+  <BrowserRouter>
+    <AuthProvider>
+      <OrderProvider>
         <ThemeProvider theme={theme}>
           <MenuProvider>
             <App />
           </MenuProvider>
         </ThemeProvider>
-      </AuthProvider>
-    </BrowserRouter>
+      </OrderProvider>
+    </AuthProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
