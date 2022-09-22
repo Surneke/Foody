@@ -5,7 +5,10 @@ export const theme = createTheme({
     1: "none",
     0: "none",
     4: "none",
+    8: "none",
   },
+  outline: "none",
+
   palette: {
     primary: {
       main: "#66B60F",

@@ -117,7 +117,7 @@ export const PersistentDrawerLeft = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            {menuItem[index].name}
+            {/* {menuItem[index].name} */}
           </Typography>
         </Toolbar>
       </AppBar>

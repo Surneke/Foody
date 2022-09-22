@@ -1,13 +1,16 @@
-import { Box, Container, Grid,Typography } from "@mui/material";
-import { Accordion } from "../Components/Accordion";
-import { OrderBox } from "../Components/OrderBox";
-import { Accord } from "../Components/Accordion";
-import { OrderContext } from "../Context/OrderContext";
+import { Box, Grid, Typography } from "@mui/material";
 import { useContext } from "react";
-
+import { OrderContext } from "../Context/OrderContext";
+import { OrderBox } from "../Components/OrderBox";
+import { data } from "../data";
 export const Order = () => {
-  const data = useContext(OrderContext)
-  console.log(data);
+  const { packing, delivery, mistaken } = useContext(OrderContext);
+  const statusArray = [
+    { status: "Захиалсан", bgColor: "#F5F5F7", orderArr: data },
+    { status: "Хүргэгдсэн", bgColor: "#FAFFF5", orderArr: delivery },
+    { status: "Савлагдсан", bgColor: "#FFF9F1", orderArr: packing },
+    { status: "Алдаатай", bgColor: "#FAFFF5", orderArr: mistaken },
+  ];
   const orderContainer = [
     { name: "Даваа" },
     { name: "Мягмар" },
@@ -17,6 +20,7 @@ export const Order = () => {
     { name: "Бямба" },
     { name: "Ням" },
   ];
+
   return (
     <Grid
       width="fitcontent"
@@ -24,16 +28,26 @@ export const Order = () => {
       marginLeft="300px"
       container
     >
-      <Grid item display="flex">
-        {orderContainer.map((el, idx) => (
-          <Grid key={idx}>
-            <OrderBox name={el.name} background={"#f5f5f7"}/>
-            <OrderBox background={"#FFF9F1"}/>
-            <OrderBox background={"#FAFFF5;"}/> 
-            <OrderBox background={"#FAFFF5"}/> 
+      {statusArray.map((status, index) => (
+        <Box key={index}>
+          <Typography>{status.status}</Typography>
+          <Grid item display="flex">
+            {orderContainer.map((el, idx) => (
+              <Grid container key={idx}>
+                <Grid item>
+                  <OrderBox
+                    name={el.name}
+                    status={status.status}
+                    index={index}
+                    orders={status.orderArr}
+                    background={status.bgColor}
+                  />
+                </Grid>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+        </Box>
+      ))}
     </Grid>
   );
 };
