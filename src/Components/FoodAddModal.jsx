@@ -25,10 +25,10 @@ export const BasicModal = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [age, setAge] = useState("");
+  const [type, setType] = useState("");
   
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setType(event.target.value);
   };
   const style = {
     position: "absolute",
@@ -104,11 +104,10 @@ export const BasicModal = () => {
                   </Stack>
                   <Stack>
                     <Typography>Төрөл</Typography>
-                    <FormControl width="80px">
-                      <InputLabel></InputLabel>
+                    <FormControl sx={{minWidth:"200px"}}>
+                      <InputLabel sx={{minWidth:"150px"}}>{type==="" ? "Төрөлгүй" : ""}</InputLabel>
                       <Select
-                        value={age}
-                        label="Age"
+                        value={type}
                         onChange={handleChange}
                       >
                         <MenuItem value={10}>Халуун ногоотой</MenuItem>
@@ -132,7 +131,7 @@ export const BasicModal = () => {
               marginBottom="48px"
             >
               {ingredients.map((el, idx) => (
-                <Ingredients key={idx} name={el.name} />
+                <Ingredients key={idx} idx={idx} name={el.name} />
               ))}
             </Grid>
             <Divider />
