@@ -1,14 +1,8 @@
 import { PersistentDrawerLeft } from "./Components/Sidebar";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import { Home } from "./Page/Home";
-import { Graphic } from "./Page/Graphic";
-import { Order } from "./Page/Order";
-import { Sign } from "./Page/Sign";
-import { Login } from "./Page/Login";
-import "./App.css";
-import { Menu } from "./Page/Menu";
+import { Home,Graphic, Order, Sign, Login, Menu } from './Page'
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
   
@@ -25,5 +19,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+;

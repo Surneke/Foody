@@ -31,10 +31,10 @@ export const Order = () => {
     >
       {statusArray.map((status, index) => (
         <Box key={index}>
-          <Grid item display="flex">
+          <Box item display="flex">
             {orderContainer.map((el, idx) => (
-              <Grid container key={idx}>
-                <Grid item>
+              <Box key={idx}>
+                <Box item>
                   <OrderBox
                     name={el.name}
                     idx={idx}
@@ -43,10 +43,10 @@ export const Order = () => {
                     orders={status.orderArr}
                     background={status.bgColor}
                   />
-                </Grid>
-              </Grid>
+                </Box>
+              </Box>
             ))}
-          </Grid>
+          </Box>
         </Box>
       ))}
     </Grid>

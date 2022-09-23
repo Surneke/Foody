@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import AddIcon from "@mui/icons-material/Add";
-import { TextField } from '@material-ui/core';
 
 const style = {
   position: 'absolute',
@@ -41,7 +40,6 @@ export const ChildModal = () => {
         aria-describedby="child-modal-description"
       >
         <Box sx={{ ...style, width: 400 }}>
-           <TextField></TextField>
           <Button onClick={handleClose}>Нэмэх</Button>
         </Box>
       </Modal>

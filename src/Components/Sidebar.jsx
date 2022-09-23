@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { styled, useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
+import{ Box, Drawer, }from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -22,7 +20,6 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import SettingsIcon from "@mui/icons-material/Settings";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
-import { Button } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import { ChildModal } from "./AlertModal";
 import { useLocation } from "react-router-dom";
@@ -117,7 +114,7 @@ export const PersistentDrawerLeft = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            {/* {menuItem[index].name} */}
+            {menuItem[index]?.name}
           </Typography>
         </Toolbar>
       </AppBar>
