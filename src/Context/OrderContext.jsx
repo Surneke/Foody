@@ -3,6 +3,7 @@ import { data } from "../data";
 
 export const OrderContext = createContext();
 export const OrderProvider = ({ children }) => {
+  const [myData,setMyData] = useState(data)
   const [order,setOrder] = useState([]);
   const [packing, setPacking ]= useState([]);
   const[ delivery,setDelivery] = useState([]);
@@ -11,7 +12,9 @@ export const OrderProvider = ({ children }) => {
   return (
     <OrderContext.Provider
       value={{
+        myData,
         data,
+        setMyData,
         setOrder,
         order,
         packing,
