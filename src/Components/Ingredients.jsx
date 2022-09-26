@@ -1,18 +1,10 @@
 import { Box, Button, Typography, TextField, Grid } from "@mui/material";
 import RemoveIcon from '@mui/icons-material/Remove';
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import {KonohaUp} from "../images/KonohaUp"
 import { MenuContext } from "../Context/MenuContext";
 
 export const Ingredients = ({ name, img, idx }) => {
- const {addIngredients, setAddIngredients} = useContext(MenuContext)
-  const style = {
-      borderRadius:"100%",
-      color:"error",
-      height:"32px",
-      maxWidth:"12px", 
-      backgroundColor:"#fdd9e5",
-    }
    const deleteIng = (idx) => {
     console.log(idx)
    }

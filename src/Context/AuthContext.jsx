@@ -32,12 +32,12 @@
 //         {children}
 //     </AuthContext.Provider>
 // }
-import {auth} from "../FirebaseForThisProject/Firebase";
-import { createContext, useContext, useState } from 'react'
- import {
-     createUserWithEmailAndPassword,
-     signInWithEmailAndPassword,
- } from 'firebase/auth'
+// import {auth} from "../FirebaseForThisProject/Firebase";
+import { createContext, useState } from 'react'
+//  import {
+//      createUserWithEmailAndPassword,
+//      signInWithEmailAndPassword,
+//  } from 'firebase/auth'
 
 export const AuthContext = createContext()
 export const AuthProvider = ({children}) => {

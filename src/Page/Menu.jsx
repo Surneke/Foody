@@ -1,12 +1,12 @@
-import { Box, Grid,Typography, Button} from "@mui/material";
+import { Box,Typography} from "@mui/material";
 import { Container } from "@mui/system";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { BasicModal } from "../Components/FoodAddModal";
 import { MenuContext } from "../Context/MenuContext";
 import {FoodAddImg} from "../images/FoodAddImg"
 
 export const Menu = () => { 
-    const {addIngredients,setAddIngredients,addFood,setAddFood} = useContext(MenuContext)
+
 
     return (
         <Container>

@@ -2,13 +2,10 @@ import * as React from "react";
 import {
   Box,
   TextField,
-  Container,
   Typography,
   Button,
   Grid,
 } from "@mui/material";
-import { Konoha } from "../images/Konoha";
-import { KonohaUp } from "../images/KonohaUp";
 import { sendSignInLinkToEmail } from "firebase/auth";
 import { auth } from "../FirebaseForThisProject/Firebase";
 

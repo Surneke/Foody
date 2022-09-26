@@ -20,7 +20,7 @@ import RoomIcon from "@mui/icons-material/Room";
 import PhoneIcon from "@mui/icons-material/Phone";
 
 export const Accord = ({ dataa, expanded, handleExpand }) => {
-  const { setPacking, setDelivery, setMistaken, myData, setMyData } =
+  const { setPacking, setDelivery, setMistaken, myData} =
     useContext(OrderContext);
   const [status, setStatus] = useState("");
   const [accordionID, setAccordionID] = useState("");
